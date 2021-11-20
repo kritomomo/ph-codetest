@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "Home",
+    "path": "/",
+    "subNavBar": []
+  },
+  {
+    "id": 2,
+    "name": "Login",
+    "path": "/login",
+    "subNavBar": []
+  },
+  {
+    "id": 3,
+    "name": "Topics",
+    "path": "/topics",
+    "subNavBar": [
+      {
+        "id": 1,
+        "name": "React",
+        "path": "topics/react"
+      },
+      {
+        "id": 2,
+        "name": "Vue",
+        "path": "topics/vue"
+      },
+      {
+        "id": 3,
+        "name": "Angular",
+        "path": "topics/angular"
+      }
+    ]
+  }
+]
