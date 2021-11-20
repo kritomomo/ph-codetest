@@ -9,12 +9,15 @@ import { useNavigate } from 'react-router-dom';
 import Visibility  from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import useLoginForm from './hooks/useLoginForm';
+import StatusMsg from '../../components/StatusMsg/StatusMsg';
 import useStyles from './Login.style';
 import config from './config';
 
 const Login = () => {
   const classes = useStyles();
   const { 
+    error,
+    success,
     showPassword,
     handleShowPassword,
     initialValues,
@@ -35,6 +38,10 @@ const Login = () => {
         {({ isSubmitting }) => (
           <Form>
             <div className={classes.container}>
+              <div className={classes.msg}>
+                {error && <StatusMsg content={'Username or Password is incorrect'} color={"246, 0, 88"} />}
+                {success && <StatusMsg content={'Login Success'} color={"99, 184, 100"} />}
+              </div>
               <div className={classes.username}>
                 <Field 
                   {...username}

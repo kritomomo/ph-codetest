@@ -6,6 +6,9 @@ export default makeStyles(() => createStyles({
     display: 'flex',
     flexDirection: 'column',
   },
+  msg: {
+    marginBottom: 10,
+  },
   username: {
     marginBottom: 20,
   },
