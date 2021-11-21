@@ -1,10 +1,17 @@
 import { createStyles, makeStyles } from "@material-ui/styles";
 
 export default makeStyles(() => createStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 100,
+  },
   container: {
     width: 500,
     display: 'flex',
     flexDirection: 'column',
+
   },
   msg: {
     marginBottom: 10,

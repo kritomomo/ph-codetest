@@ -29,7 +29,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className={classes.root}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -89,7 +89,7 @@ const Login = () => {
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   )
 }
 
