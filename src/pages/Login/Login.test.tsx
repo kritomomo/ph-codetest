@@ -5,6 +5,8 @@ import Login from './Login';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import * as history from 'react-router';
+import { AxiosPromise } from 'axios';
+import * as api from '../../utils/api.ts';
 
 const baseUrl = process.env.REACT_APP_API;
 
@@ -47,8 +49,10 @@ describe('Login', () => {
 
   it('should show error message when login failed', async () => {
 
-    const mock = new MockAdapter(axios);
-    mock.onPost(url).reply(401);
+    // const mock = new MockAdapter(axios);
+    // mock.onPost(url).reply(401);
+    jest.spyOn(api, 'login')
+    .mockRejectedValue({ status: 401 } as unknown as AxiosPromise);
     render(
       <MemoryRouter>
         <Login/>
@@ -68,8 +72,10 @@ describe('Login', () => {
   });
 
   it('should show success message when login success', async () => {
-    const mock = new MockAdapter(axios);
-    mock.onPost(url).reply(200, { id: 1 });
+    // const mock = new MockAdapter(axios);
+    // mock.onPost(url).reply(200, { id: 1 });
+    jest.spyOn(api, 'login')
+    .mockResolvedValue({ status: 200 } as unknown as AxiosPromise);
     render(
       <MemoryRouter>
         <Login/>
