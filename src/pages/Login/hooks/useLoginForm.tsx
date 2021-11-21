@@ -39,11 +39,10 @@ const useLoginForm = () => {
       if (loginRes.status === 200) {
         setSuccess(true);
       }
-    } catch (error : any) {
-      if (error.response.status === 401) {
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {
         setError(true);
       }
-      setError(true);
     }
   }, []);
 

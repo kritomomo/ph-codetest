@@ -29,6 +29,7 @@
     "start-all": "concurrently \"react-scripts start\" \"node _mock_/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-c":"react-scripts test --coverage --colors --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
