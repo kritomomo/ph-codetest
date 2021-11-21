@@ -1,15 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { InputAdornment, IconButton } from '@material-ui/core';
 import ILoginForm from "../../../common/interface/ILoginForm";
 import useStyles from '../Login.style';
 import * as api from '../../../utils/api';
-
-interface IEndAdornment {
-  component: JSX.Element,
-  handleOnClick: any;
-}
 
 const useLoginForm = () => {
   const classes = useStyles();
@@ -38,7 +32,7 @@ const useLoginForm = () => {
       const loginRes = await api.login({ username, password });
       if (loginRes.status === 200) {
         setSuccess(true);
-      }
+      };
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
         setError(true);

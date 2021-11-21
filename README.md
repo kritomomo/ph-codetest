@@ -10,6 +10,15 @@
 - Testing-library
 - Formik + Yup
 
+## Configuration
+
+create a .env file at the root level
+
+REACT_APP_API=http://localhost:8080/api/v1
+
+## Account for login test
+username: user@gmail.com
+password: password12345
 ## Available Scripts
 
 ## Run

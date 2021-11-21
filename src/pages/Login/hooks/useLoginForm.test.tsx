@@ -3,7 +3,9 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import useLoginForm from './useLoginForm';
 
-const url = 'http://localhost:8080/api/v1/login';
+const baseUrl = process.env.REACT_APP_API;
+
+const url = `${baseUrl}/login`;
 
 describe('login hooks', () => {
 

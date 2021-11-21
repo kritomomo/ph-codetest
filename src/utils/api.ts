@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ILoginForm from '../common/interface/ILoginForm';
 
-const baseUrl = 'http://localhost:8080/api/v1';
+const baseUrl = process.env.REACT_APP_API;
 
 export const login = ({ username, password }: ILoginForm) =>
   axios({

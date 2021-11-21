@@ -6,8 +6,11 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import * as history from 'react-router';
 
+const baseUrl = process.env.REACT_APP_API;
+
+const url = `${baseUrl}/login`;
+
 describe('Login', () => {
-  const url = 'http://localhost:8080/api/v1/login';
 
   it('should show message when empty input', async() => {
     render(
