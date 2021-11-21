@@ -15,7 +15,7 @@ describe('useNavbar', () => {
   it('should change anchorEl state when trigger handleClick function', () => {
     const { result } = renderHook(() => useNavbar());
     act(() => {
-      result.current.handleClick({currentTarget: 'currentTarget'} as React.MouseEvent<HTMLButtonElement>);
+      result.current.handleClick({ currentTarget: 'currentTarget' } as unknown as React.MouseEvent<HTMLButtonElement>);
     });
     expect(result.current.anchorEl).toBe("currentTarget")
   });
