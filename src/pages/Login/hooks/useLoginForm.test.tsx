@@ -41,5 +41,15 @@ describe('login hooks', () => {
       result.current.handleShowPassword();
     });
     expect(result.current.showPassword).toBe(true);
+  });
+
+  it('should get success equal to true', async () => {
+    const mock = new MockAdapter(axios);
+    mock.onPost(url).reply(200);
+    const { result } = renderHook(() => useLoginForm());
+    await act(async () => {
+      result.current.handleOnSubmit({ usename: 'username@gmail.com', password: 'password12345'});
+    });
+    expect(result.current.success).toEqual(true);
   })
 });
