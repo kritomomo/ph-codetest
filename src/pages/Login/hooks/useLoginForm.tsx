@@ -54,16 +54,6 @@ const useLoginForm = () => {
     </ErrorMessage>
   );
 
-  const showEndAdornemnt = useCallback(({ handleOnClick, component} : IEndAdornment) => ({
-    endAdornment: (
-      <InputAdornment position="end">
-        <IconButton onClick={handleOnClick}>
-          {component}
-        </IconButton>
-      </InputAdornment>
-    )
-  }), []);
-
   return {
     error,
     success,
@@ -73,7 +63,6 @@ const useLoginForm = () => {
     validationSchema,
     handleOnSubmit,
     showErrorMsg,
-    showEndAdornemnt,
   };
 };
 
